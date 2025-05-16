@@ -1,0 +1,12 @@
+/* static/src/input.css */
+
+@import "tailwindcss";
+
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../../node_modules/flowbite";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Backwards compatibility with Tailwind v3 config from v4 */
+@config "../../tailwind.config.js";

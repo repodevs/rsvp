@@ -1,0 +1,49 @@
+{% extends '_base.html' %}
+{% block title %}Person Detail - {{ person.name }}{% endblock title %}
+
+{% block content %}
+
+<div class="px-4 pt-6 grid grid-cols-1 xl:grid-cols-2 xl:gap-4">
+    <div class="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 sm:p-6 dark:bg-gray-800 xl:mb-0">
+        <div class="flow-root">
+                <h3 class="mb-4 text-xl font-semibold dark:text-white">Person Detail</h3>
+                <form action="{% url 'person_edit' person.id %}" method="POST">
+                {% csrf_token %}
+                    <div class="grid grid-cols-6 gap-6">
+                        <div class="col-span-6 sm:col-span-1">
+                            <label for="code" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Code</label>
+                            <input type="text" name="code" id="code" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="{{ person.code }}" value="{{ person.code }}" required>
+                        </div>
+                        <div class="col-span-6 sm:col-span-5">
+                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+                            <input type="text" name="name" id="name" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="{{ person.name }}" value="{{ person.name }}" required>
+                        </div>
+                        <div class="col-span-6 sm:col-span-3">
+                            <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
+                            <input type="text" name="title" id="title" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="{{ person.title }}" value="{{ person.title }}" required>
+                        </div>
+
+                        <label for="is_multi_gift" class="inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="is_multi_gift" name="is_multi_gift" class="sr-only peer" {% if person.is_multi_gift %}checked{% endif %}>
+                            <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
+                            <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">Is Multi Gift</span>
+                        </label>
+
+                        <div class="col-span-6 sm:col-span-3">
+                            <label for="is_active" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Is Active</label>
+                            <select id="is_active" name="is_active" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                                <option value="true" {% if person.is_active %}selected{% endif %}>Yes</option>
+                                <option value="false" {% if not person.is_active %}selected{% endif %}>No</option>
+                            </select>
+                        </div>
+
+                        <div class="col-span-6 sm:col-full">
+                            <button class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" type="submit">Update Person</button>
+                        </div>
+                    </div>
+                </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

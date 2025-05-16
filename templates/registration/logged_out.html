@@ -1,0 +1,39 @@
+{% extends 'registration/_base.html' %}
+
+{% block title %}Sign Out{% endblock title %}
+
+{% block navbar %}
+{% endblock navbar %}
+
+{% block sidebar %}
+{% endblock sidebar %}
+
+{% block content %}
+
+<div class="flex flex-col items-center justify-center px-6 pt-8 mx-auto md:h-screen pt:mt-0 dark:bg-gray-900">
+    <a href="/" class="flex items-center justify-center mb-8 text-2xl font-semibold lg:mb-10 dark:text-white">
+        <span>RSVP</span>  
+    </a>
+    <!-- Card -->
+    <div class="w-full max-w-md bg-white rounded-lg shadow md:mt-0 xl:p-0 dark:bg-gray-800">
+        <div class="w-full p-6 sm:p-8">
+            <div class="flex space-x-4">
+                <h2 class="mb-3 text-2xl font-bold text-gray-900 dark:text-white">Anda telah berhasil keluar.</h2>
+            </div>
+            <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+                Terima kasih telah menghabiskan waktu berkualitas dengan situs web hari ini.
+            </p>
+
+            <!-- link to login -->
+            <a href="{% url 'login' %}" class="bg-primary-600 block border border-transparent font-semibold py-2 rounded text-sm text-center text-white w-full mt-4">
+                Masuk lagi
+            </a>
+            <p class="text-base font-normal text-gray-500 dark:text-gray-400 mt-4">
+                Atau, jika Anda ingin kembali ke halaman utama, silakan klik <a href="/" class="text-primary-600">di sini</a>.
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+{% block footer %}{% endblock footer %}

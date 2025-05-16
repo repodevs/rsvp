@@ -1,0 +1,15 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.bak
+
+*.sqlite3
+
+node_modules/
+static/CACHE/
+templates/_old/
+
+tmp/
+
+DEV.md
