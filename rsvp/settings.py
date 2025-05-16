@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 from django.urls import reverse_lazy
@@ -178,7 +179,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 ######################################################################
 # Compressor
 ######################################################################
-COMPRESS_ENABLED = True
+COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', True)
 
 COMPRESS_ROOT = BASE_DIR / 'static'
 
