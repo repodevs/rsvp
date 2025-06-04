@@ -1,0 +1,652 @@
+[
+  {
+    "model": "app.person",
+    "pk": 1,
+    "fields": {
+      "code": "x7k2a",
+      "name": "Dewi Lestari",
+      "title": "SAUDARI",
+      "is_multi_gift": false,
+      "is_active": true,
+      "created_at": "2025-06-04T12:00:00.000Z",
+      "updated_at": "2025-06-04T12:00:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 2,
+    "fields": {
+      "code": "m2r9q",
+      "name": "Budi Santoso",
+      "title": "SAUDARA",
+      "is_multi_gift": true,
+      "is_active": true,
+      "created_at": "2025-06-04T12:01:00.000Z",
+      "updated_at": "2025-06-04T12:01:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 3,
+    "fields": {
+      "code": "l8p3s",
+      "name": "Siti Aminah",
+      "title": "SAUDARI",
+      "is_multi_gift": false,
+      "is_active": true,
+      "created_at": "2025-06-04T12:02:00.000Z",
+      "updated_at": "2025-06-04T12:02:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 4,
+    "fields": {
+      "code": "q1w2e",
+      "name": "Agus Prabowo",
+      "title": "SAUDARA",
+      "is_multi_gift": true,
+      "is_active": true,
+      "created_at": "2025-06-04T12:03:00.000Z",
+      "updated_at": "2025-06-04T12:03:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 5,
+    "fields": {
+      "code": "z9x8c",
+      "name": "Rina Kartika",
+      "title": "SAUDARI",
+      "is_multi_gift": false,
+      "is_active": true,
+      "created_at": "2025-06-04T12:04:00.000Z",
+      "updated_at": "2025-06-04T12:04:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 6,
+    "fields": {
+      "code": "b7n6m",
+      "name": "Eko Saputra",
+      "title": "SAUDARA",
+      "is_multi_gift": true,
+      "is_active": true,
+      "created_at": "2025-06-04T12:05:00.000Z",
+      "updated_at": "2025-06-04T12:05:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 7,
+    "fields": {
+      "code": "v5c4x",
+      "name": "Putri Ayu",
+      "title": "SAUDARI",
+      "is_multi_gift": false,
+      "is_active": true,
+      "created_at": "2025-06-04T12:06:00.000Z",
+      "updated_at": "2025-06-04T12:06:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 8,
+    "fields": {
+      "code": "t3r2e",
+      "name": "Hendra Gunawan",
+      "title": "SAUDARA",
+      "is_multi_gift": true,
+      "is_active": true,
+      "created_at": "2025-06-04T12:07:00.000Z",
+      "updated_at": "2025-06-04T12:07:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 9,
+    "fields": {
+      "code": "y6u7i",
+      "name": "Sri Wahyuni",
+      "title": "SAUDARI",
+      "is_multi_gift": false,
+      "is_active": true,
+      "created_at": "2025-06-04T12:08:00.000Z",
+      "updated_at": "2025-06-04T12:08:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 10,
+    "fields": {
+      "code": "o9p0l",
+      "name": "Joko Widodo",
+      "title": "BAPAK",
+      "is_multi_gift": true,
+      "is_active": true,
+      "created_at": "2025-06-04T12:09:00.000Z",
+      "updated_at": "2025-06-04T12:09:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 11,
+    "fields": {
+      "code": "a1s2d",
+      "name": "Mega Sari",
+      "title": "IBU",
+      "is_multi_gift": false,
+      "is_active": true,
+      "created_at": "2025-06-04T12:10:00.000Z",
+      "updated_at": "2025-06-04T12:10:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 12,
+    "fields": {
+      "code": "f3g4h",
+      "name": "Andi Wijaya",
+      "title": "SAUDARA",
+      "is_multi_gift": true,
+      "is_active": true,
+      "created_at": "2025-06-04T12:11:00.000Z",
+      "updated_at": "2025-06-04T12:11:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 13,
+    "fields": {
+      "code": "j5k6l",
+      "name": "Lina Marlina",
+      "title": "SAUDARI",
+      "is_multi_gift": false,
+      "is_active": true,
+      "created_at": "2025-06-04T12:12:00.000Z",
+      "updated_at": "2025-06-04T12:12:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 14,
+    "fields": {
+      "code": "z1x2c",
+      "name": "Rudi Hartono",
+      "title": "SAUDARA",
+      "is_multi_gift": true,
+      "is_active": true,
+      "created_at": "2025-06-04T12:13:00.000Z",
+      "updated_at": "2025-06-04T12:13:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 15,
+    "fields": {
+      "code": "v3b4n",
+      "name": "Maya Fitriani",
+      "title": "SAUDARI",
+      "is_multi_gift": false,
+      "is_active": true,
+      "created_at": "2025-06-04T12:14:00.000Z",
+      "updated_at": "2025-06-04T12:14:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 16,
+    "fields": {
+      "code": "m5n6b",
+      "name": "Dian Prasetyo",
+      "title": "SAUDARA",
+      "is_multi_gift": true,
+      "is_active": true,
+      "created_at": "2025-06-04T12:15:00.000Z",
+      "updated_at": "2025-06-04T12:15:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 17,
+    "fields": {
+      "code": "c7v8b",
+      "name": "Yuni Astuti",
+      "title": "SAUDARI",
+      "is_multi_gift": false,
+      "is_active": true,
+      "created_at": "2025-06-04T12:16:00.000Z",
+      "updated_at": "2025-06-04T12:16:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 18,
+    "fields": {
+      "code": "x9z0a",
+      "name": "Slamet Riyadi",
+      "title": "BAPAK",
+      "is_multi_gift": true,
+      "is_active": true,
+      "created_at": "2025-06-04T12:17:00.000Z",
+      "updated_at": "2025-06-04T12:17:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 19,
+    "fields": {
+      "code": "s1d2f",
+      "name": "Ratna Sari",
+      "title": "IBU",
+      "is_multi_gift": false,
+      "is_active": true,
+      "created_at": "2025-06-04T12:18:00.000Z",
+      "updated_at": "2025-06-04T12:18:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 20,
+    "fields": {
+      "code": "g3h4j",
+      "name": "Fajar Nugroho",
+      "title": "SAUDARA",
+      "is_multi_gift": true,
+      "is_active": true,
+      "created_at": "2025-06-04T12:19:00.000Z",
+      "updated_at": "2025-06-04T12:19:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 21,
+    "fields": {
+      "code": "k5l6m",
+      "name": "Indah Permata",
+      "title": "SAUDARI",
+      "is_multi_gift": false,
+      "is_active": true,
+      "created_at": "2025-06-04T12:20:00.000Z",
+      "updated_at": "2025-06-04T12:20:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 22,
+    "fields": {
+      "code": "n7b8v",
+      "name": "Teguh Setiawan",
+      "title": "SAUDARA",
+      "is_multi_gift": true,
+      "is_active": true,
+      "created_at": "2025-06-04T12:21:00.000Z",
+      "updated_at": "2025-06-04T12:21:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 23,
+    "fields": {
+      "code": "m9n0b",
+      "name": "Wulan Sari",
+      "title": "SAUDARI",
+      "is_multi_gift": false,
+      "is_active": true,
+      "created_at": "2025-06-04T12:22:00.000Z",
+      "updated_at": "2025-06-04T12:22:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 24,
+    "fields": {
+      "code": "q2w3e",
+      "name": "Bayu Prakoso",
+      "title": "SAUDARA",
+      "is_multi_gift": true,
+      "is_active": true,
+      "created_at": "2025-06-04T12:23:00.000Z",
+      "updated_at": "2025-06-04T12:23:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 25,
+    "fields": {
+      "code": "r4t5y",
+      "name": "Nina Agustina",
+      "title": "SAUDARI",
+      "is_multi_gift": false,
+      "is_active": true,
+      "created_at": "2025-06-04T12:24:00.000Z",
+      "updated_at": "2025-06-04T12:24:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 26,
+    "fields": {
+      "code": "u6i7o",
+      "name": "Dedi Supriyadi",
+      "title": "SAUDARA",
+      "is_multi_gift": true,
+      "is_active": true,
+      "created_at": "2025-06-04T12:25:00.000Z",
+      "updated_at": "2025-06-04T12:25:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 27,
+    "fields": {
+      "code": "p8o9i",
+      "name": "Sari Dewi",
+      "title": "SAUDARI",
+      "is_multi_gift": false,
+      "is_active": true,
+      "created_at": "2025-06-04T12:26:00.000Z",
+      "updated_at": "2025-06-04T12:26:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 28,
+    "fields": {
+      "code": "l0k9j",
+      "name": "Heri Susanto",
+      "title": "SAUDARA",
+      "is_multi_gift": true,
+      "is_active": true,
+      "created_at": "2025-06-04T12:27:00.000Z",
+      "updated_at": "2025-06-04T12:27:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 29,
+    "fields": {
+      "code": "h8g7f",
+      "name": "Mira Anggraini",
+      "title": "SAUDARI",
+      "is_multi_gift": false,
+      "is_active": true,
+      "created_at": "2025-06-04T12:28:00.000Z",
+      "updated_at": "2025-06-04T12:28:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 30,
+    "fields": {
+      "code": "d6s5a",
+      "name": "Rizky Ramadhan",
+      "title": "SAUDARA",
+      "is_multi_gift": true,
+      "is_active": true,
+      "created_at": "2025-06-04T12:29:00.000Z",
+      "updated_at": "2025-06-04T12:29:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 31,
+    "fields": {
+      "code": "f4g3h",
+      "name": "Yulianti",
+      "title": "SAUDARI",
+      "is_multi_gift": false,
+      "is_active": true,
+      "created_at": "2025-06-04T12:30:00.000Z",
+      "updated_at": "2025-06-04T12:30:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 32,
+    "fields": {
+      "code": "j2k1l",
+      "name": "Taufik Hidayat",
+      "title": "SAUDARA",
+      "is_multi_gift": true,
+      "is_active": true,
+      "created_at": "2025-06-04T12:31:00.000Z",
+      "updated_at": "2025-06-04T12:31:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 33,
+    "fields": {
+      "code": "z3x4c",
+      "name": "Sulastri",
+      "title": "SAUDARI",
+      "is_multi_gift": false,
+      "is_active": true,
+      "created_at": "2025-06-04T12:32:00.000Z",
+      "updated_at": "2025-06-04T12:32:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 34,
+    "fields": {
+      "code": "v5b6n",
+      "name": "Arif Setiawan",
+      "title": "SAUDARA",
+      "is_multi_gift": true,
+      "is_active": true,
+      "created_at": "2025-06-04T12:33:00.000Z",
+      "updated_at": "2025-06-04T12:33:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 35,
+    "fields": {
+      "code": "m7n8b",
+      "name": "Dewi Sartika",
+      "title": "SAUDARI",
+      "is_multi_gift": false,
+      "is_active": true,
+      "created_at": "2025-06-04T12:34:00.000Z",
+      "updated_at": "2025-06-04T12:34:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 36,
+    "fields": {
+      "code": "c9v0b",
+      "name": "Fahmi Rizal",
+      "title": "SAUDARA",
+      "is_multi_gift": true,
+      "is_active": true,
+      "created_at": "2025-06-04T12:35:00.000Z",
+      "updated_at": "2025-06-04T12:35:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 37,
+    "fields": {
+      "code": "x1z2a",
+      "name": "Lestari Wulandari",
+      "title": "SAUDARI",
+      "is_multi_gift": false,
+      "is_active": true,
+      "created_at": "2025-06-04T12:36:00.000Z",
+      "updated_at": "2025-06-04T12:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 38,
+    "fields": {
+      "code": "s3d4f",
+      "name": "Imam Syafii",
+      "title": "SAUDARA",
+      "is_multi_gift": true,
+      "is_active": true,
+      "created_at": "2025-06-04T12:37:00.000Z",
+      "updated_at": "2025-06-04T12:37:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 39,
+    "fields": {
+      "code": "g5h6j",
+      "name": "Novi Andriani",
+      "title": "SAUDARI",
+      "is_multi_gift": false,
+      "is_active": true,
+      "created_at": "2025-06-04T12:38:00.000Z",
+      "updated_at": "2025-06-04T12:38:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 40,
+    "fields": {
+      "code": "k7l8m",
+      "name": "Dimas Anggara",
+      "title": "SAUDARA",
+      "is_multi_gift": true,
+      "is_active": true,
+      "created_at": "2025-06-04T12:39:00.000Z",
+      "updated_at": "2025-06-04T12:39:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 41,
+    "fields": {
+      "code": "n9b0v",
+      "name": "Siti Nurhaliza",
+      "title": "SAUDARI",
+      "is_multi_gift": false,
+      "is_active": true,
+      "created_at": "2025-06-04T12:40:00.000Z",
+      "updated_at": "2025-06-04T12:40:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 42,
+    "fields": {
+      "code": "m1n2b",
+      "name": "Rizal Maulana",
+      "title": "SAUDARA",
+      "is_multi_gift": true,
+      "is_active": true,
+      "created_at": "2025-06-04T12:41:00.000Z",
+      "updated_at": "2025-06-04T12:41:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 43,
+    "fields": {
+      "code": "c3v4b",
+      "name": "Yuliana",
+      "title": "SAUDARI",
+      "is_multi_gift": false,
+      "is_active": true,
+      "created_at": "2025-06-04T12:42:00.000Z",
+      "updated_at": "2025-06-04T12:42:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 44,
+    "fields": {
+      "code": "x5z6a",
+      "name": "Hadi Pranoto",
+      "title": "SAUDARA",
+      "is_multi_gift": true,
+      "is_active": true,
+      "created_at": "2025-06-04T12:43:00.000Z",
+      "updated_at": "2025-06-04T12:43:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 45,
+    "fields": {
+      "code": "s7d8f",
+      "name": "Mira Sari",
+      "title": "SAUDARI",
+      "is_multi_gift": false,
+      "is_active": true,
+      "created_at": "2025-06-04T12:44:00.000Z",
+      "updated_at": "2025-06-04T12:44:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 46,
+    "fields": {
+      "code": "g9h0j",
+      "name": "Ferry Irawan",
+      "title": "SAUDARA",
+      "is_multi_gift": true,
+      "is_active": true,
+      "created_at": "2025-06-04T12:45:00.000Z",
+      "updated_at": "2025-06-04T12:45:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 47,
+    "fields": {
+      "code": "k1l2m",
+      "name": "Dewi Anggraini",
+      "title": "SAUDARI",
+      "is_multi_gift": false,
+      "is_active": true,
+      "created_at": "2025-06-04T12:46:00.000Z",
+      "updated_at": "2025-06-04T12:46:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 48,
+    "fields": {
+      "code": "n3b4v",
+      "name": "Rizky Pratama",
+      "title": "SAUDARA",
+      "is_multi_gift": true,
+      "is_active": true,
+      "created_at": "2025-06-04T12:47:00.000Z",
+      "updated_at": "2025-06-04T12:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 49,
+    "fields": {
+      "code": "m5n6a",
+      "name": "Yuniarti",
+      "title": "SAUDARI",
+      "is_multi_gift": false,
+      "is_active": true,
+      "created_at": "2025-06-04T12:48:00.000Z",
+      "updated_at": "2025-06-04T12:48:00.000Z"
+    }
+  },
+  {
+    "model": "app.person",
+    "pk": 50,
+    "fields": {
+      "code": "c7v8a",
+      "name": "Agung Wibowo",
+      "title": "SAUDARA",
+      "is_multi_gift": true,
+      "is_active": true,
+      "created_at": "2025-06-04T12:49:00.000Z",
+      "updated_at": "2025-06-04T12:49:00.000Z"
+    }
+  }
+]

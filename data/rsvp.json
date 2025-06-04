@@ -1,0 +1,327 @@
+[
+  {
+    "model": "app.rsvp",
+    "pk": 1,
+    "fields": {
+      "code": "x7k2a",
+      "name": "Dewi Lestari",
+      "message": "Doa terbaik untuk keluarga baru! 🤲",
+      "attendance": "YES",
+      "is_active": true,
+      "created_at": "2025-06-04T12:36:00.000Z",
+      "updated_at": "2025-06-04T12:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.rsvp",
+    "pk": 2,
+    "fields": {
+      "code": "m2r9q",
+      "name": "Budi Santoso",
+      "message": "Semoga menjadi keluarga sakinah, mawaddah, warahmah! 🌹",
+      "attendance": "YES",
+      "is_active": true,
+      "created_at": "2025-06-04T12:36:00.000Z",
+      "updated_at": "2025-06-04T12:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.rsvp",
+    "pk": 3,
+    "fields": {
+      "code": "l8p3s",
+      "name": "Siti Aminah",
+      "message": "Semoga cinta kalian abadi! 💞",
+      "attendance": "YES",
+      "is_active": true,
+      "created_at": "2025-06-04T12:36:00.000Z",
+      "updated_at": "2025-06-04T12:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.rsvp",
+    "pk": 4,
+    "fields": {
+      "code": "q1w2e",
+      "name": "Agus Prabowo",
+      "message": "Barakallah, semoga berkah! ✨",
+      "attendance": "YES",
+      "is_active": true,
+      "created_at": "2025-06-04T12:36:00.000Z",
+      "updated_at": "2025-06-04T12:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.rsvp",
+    "pk": 5,
+    "fields": {
+      "code": "z9x8c",
+      "name": "Rina Kartika",
+      "message": "Maaf berhalangan hadir, salam hangat! 🤗",
+      "attendance": "YES",
+      "is_active": true,
+      "created_at": "2025-06-04T12:36:00.000Z",
+      "updated_at": "2025-06-04T12:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.rsvp",
+    "pk": 6,
+    "fields": {
+      "code": "b7n6m",
+      "name": "Eko Saputra",
+      "message": "Doa terbaik untuk keluarga baru! 🤲",
+      "attendance": "MAYBE YES",
+      "is_active": true,
+      "created_at": "2025-06-04T12:36:00.000Z",
+      "updated_at": "2025-06-04T12:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.rsvp",
+    "pk": 7,
+    "fields": {
+      "code": "v5c4x",
+      "name": "Putri Ayu",
+      "message": "Semoga menjadi keluarga sakinah, mawaddah, warahmah! 🌹",
+      "attendance": "YES",
+      "is_active": true,
+      "created_at": "2025-06-04T12:36:00.000Z",
+      "updated_at": "2025-06-04T12:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.rsvp",
+    "pk": 8,
+    "fields": {
+      "code": "t3r2e",
+      "name": "Hendra Gunawan",
+      "message": "Barakallah, semoga berkah! ✨",
+      "attendance": "MAYBE YES",
+      "is_active": true,
+      "created_at": "2025-06-04T12:36:00.000Z",
+      "updated_at": "2025-06-04T12:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.rsvp",
+    "pk": 9,
+    "fields": {
+      "code": "y6u7i",
+      "name": "Sri Wahyuni",
+      "message": "Semoga cepat diberi momongan! 👶",
+      "attendance": "YES",
+      "is_active": true,
+      "created_at": "2025-06-04T12:36:00.000Z",
+      "updated_at": "2025-06-04T12:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.rsvp",
+    "pk": 10,
+    "fields": {
+      "code": "o9p0l",
+      "name": "Joko Widodo",
+      "message": "Maaf tidak bisa hadir, sukses selalu! 🙏",
+      "attendance": "MAYBE YES",
+      "is_active": true,
+      "created_at": "2025-06-04T12:36:00.000Z",
+      "updated_at": "2025-06-04T12:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.rsvp",
+    "pk": 11,
+    "fields": {
+      "code": "a1s2d",
+      "name": "Mega Sari",
+      "message": "Semoga perjalanan hidup baru penuh kebahagiaan! 🚀",
+      "attendance": "MAYBE YES",
+      "is_active": true,
+      "created_at": "2025-06-04T12:36:00.000Z",
+      "updated_at": "2025-06-04T12:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.rsvp",
+    "pk": 12,
+    "fields": {
+      "code": "f3g4h",
+      "name": "Andi Wijaya",
+      "message": "Semoga menjadi pasangan yang saling melengkapi! 🤝",
+      "attendance": "MAYBE YES",
+      "is_active": true,
+      "created_at": "2025-06-04T12:36:00.000Z",
+      "updated_at": "2025-06-04T12:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.rsvp",
+    "pk": 13,
+    "fields": {
+      "code": "j5k6l",
+      "name": "Lina Marlina",
+      "message": "Semoga cepat diberi momongan! 👶",
+      "attendance": "NO",
+      "is_active": true,
+      "created_at": "2025-06-04T12:36:00.000Z",
+      "updated_at": "2025-06-04T12:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.rsvp",
+    "pk": 14,
+    "fields": {
+      "code": "z1x2c",
+      "name": "Rudi Hartono",
+      "message": "Semoga menjadi keluarga sakinah, mawaddah, warahmah! 🌹",
+      "attendance": "MAYBE NO",
+      "is_active": true,
+      "created_at": "2025-06-04T12:36:00.000Z",
+      "updated_at": "2025-06-04T12:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.rsvp",
+    "pk": 15,
+    "fields": {
+      "code": "v3b4n",
+      "name": "Maya Fitriani",
+      "message": "Barakallah, semoga berkah! ✨",
+      "attendance": "NO",
+      "is_active": true,
+      "created_at": "2025-06-04T12:36:00.000Z",
+      "updated_at": "2025-06-04T12:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.rsvp",
+    "pk": 16,
+    "fields": {
+      "code": null,
+      "name": "T. Galiono Purwanti, M.Ak",
+      "message": "Semoga perjalanan hidup baru penuh kebahagiaan! 🚀",
+      "attendance": "NO",
+      "is_active": true,
+      "created_at": "2025-06-04T12:36:00.000Z",
+      "updated_at": "2025-06-04T12:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.rsvp",
+    "pk": 17,
+    "fields": {
+      "code": null,
+      "name": "R. Dasa Hutagalung",
+      "message": "Selamat berbahagia! 😍",
+      "attendance": "NO",
+      "is_active": true,
+      "created_at": "2025-06-04T12:36:00.000Z",
+      "updated_at": "2025-06-04T12:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.rsvp",
+    "pk": 18,
+    "fields": {
+      "code": null,
+      "name": "Ega Mangunsong",
+      "message": "Selamat berbahagia! 😍",
+      "attendance": "NO",
+      "is_active": true,
+      "created_at": "2025-06-04T12:36:00.000Z",
+      "updated_at": "2025-06-04T12:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.rsvp",
+    "pk": 19,
+    "fields": {
+      "code": null,
+      "name": "Violet Wijayanti",
+      "message": "Semoga menjadi pasangan yang saling melengkapi! 🤝",
+      "attendance": "YES",
+      "is_active": true,
+      "created_at": "2025-06-04T12:36:00.000Z",
+      "updated_at": "2025-06-04T12:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.rsvp",
+    "pk": 20,
+    "fields": {
+      "code": null,
+      "name": "Jasmani Thamrin",
+      "message": "Maaf tidak bisa hadir, semoga acaranya lancar! 🙏",
+      "attendance": "MAYBE NO",
+      "is_active": true,
+      "created_at": "2025-06-04T12:36:00.000Z",
+      "updated_at": "2025-06-04T12:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.rsvp",
+    "pk": 21,
+    "fields": {
+      "code": null,
+      "name": "Dr. Lasmanto Wulandari, S.IP",
+      "message": "Semoga langgeng dan penuh cinta! 💑",
+      "attendance": "MAYBE YES",
+      "is_active": true,
+      "created_at": "2025-06-04T12:36:00.000Z",
+      "updated_at": "2025-06-04T12:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.rsvp",
+    "pk": 22,
+    "fields": {
+      "code": null,
+      "name": "Yance Adriansyah",
+      "message": "Semoga perjalanan hidup baru penuh kebahagiaan! 🚀",
+      "attendance": "MAYBE YES",
+      "is_active": true,
+      "created_at": "2025-06-04T12:36:00.000Z",
+      "updated_at": "2025-06-04T12:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.rsvp",
+    "pk": 23,
+    "fields": {
+      "code": null,
+      "name": "dr. Puspa Wacana, S.Pt",
+      "message": "Maaf berhalangan hadir, salam hangat! 🤗",
+      "attendance": "MAYBE NO",
+      "is_active": true,
+      "created_at": "2025-06-04T12:36:00.000Z",
+      "updated_at": "2025-06-04T12:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.rsvp",
+    "pk": 24,
+    "fields": {
+      "code": null,
+      "name": "Usyi Nurdiyanti",
+      "message": "Semoga cinta kalian tumbuh setiap hari! 🌻",
+      "attendance": "YES",
+      "is_active": true,
+      "created_at": "2025-06-04T12:36:00.000Z",
+      "updated_at": "2025-06-04T12:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.rsvp",
+    "pk": 25,
+    "fields": {
+      "code": null,
+      "name": "Endra Wacana",
+      "message": "Semoga cinta kalian abadi! 💞",
+      "attendance": "YES",
+      "is_active": true,
+      "created_at": "2025-06-04T12:36:00.000Z",
+      "updated_at": "2025-06-04T12:36:00.000Z"
+    }
+  }
+]

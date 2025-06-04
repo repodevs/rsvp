@@ -14,9 +14,9 @@ from app.models import RSVP
 def rsvps(request):
     query = request.GET.get('q')
     if query:
-        rsvps = RSVP.objects.filter(name__icontains=query)
+        rsvps = RSVP.objects.filter(name__icontains=query).order_by('name')
     else:
-        rsvps = RSVP.objects.all()
+        rsvps = RSVP.objects.order_by('name').all()
     rsvps = paginate_queryset(request, rsvps, per_page=10)
     return render(request, 'rsvps.html', {'records': rsvps})
 

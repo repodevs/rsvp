@@ -14,9 +14,9 @@ from app.utils import download_csv, paginate_queryset
 def persons(request):
     query = request.GET.get('q')
     if query:
-        persons = Person.objects.filter(Q(name__icontains=query) | Q(code__icontains=query))
+        persons = Person.objects.filter(Q(name__icontains=query) | Q(code__icontains=query)).order_by('name')
     else:
-        persons = Person.objects.all()
+        persons = Person.objects.order_by('name').all()
 
     persons = paginate_queryset(request, persons, per_page=10)
     return render(request, 'persons.html', {'records': persons})

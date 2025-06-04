@@ -43,6 +43,8 @@ def users(request):
     else:
         users = users.exclude(is_superuser=True)
     
+    users = users.order_by('first_name', 'last_name')
+
     users = paginate_queryset(request, users, per_page=10)
     return render(request, 'users.html', {'records': users})
 
