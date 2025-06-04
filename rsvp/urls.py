@@ -20,9 +20,8 @@ from django.urls import path, include
 from app import views
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    
     path('app/', include('app.urls')),
+    path('api/', include('app.urls_api')),
     
     # use built-in authentication django with custom templates
     path('accounts/', views.index, name='index'),
@@ -30,4 +29,7 @@ urlpatterns = [
     path('accounts/register/', views.user.register, name='register'),
     
     path('admin/', admin.site.urls),
+
+    path('', views.index, name='index'),
+    path('<str:code>/', views.wedding_home, name='wedding_home'),
 ]

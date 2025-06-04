@@ -27,12 +27,15 @@
       }
     </script>
 
+    <script src="https://unpkg.com/htmx.org@2.0.4" crossorigin="anonymous" defer></script>
+    <script src="https://unpkg.com/htmx-ext-response-targets@2.0.2" crossorigin="anonymous" defer></script>
+
     {% block extra_head %}
     {% endblock extra_head %}
 
 </head>
 
-<body class="bg-gray-50 dark:bg-gray-800">
+<body class="bg-gray-50 dark:bg-gray-800" hx-ext="response-targets">
 
   {% block navbar %}
   {% include 'partials/navbar.html' %}
@@ -59,7 +62,6 @@
 
     <script src="{% static 'src/lib/flowbite.min.js' %}"></script>
     <script src="{% static 'src/sidebar.js' %}"></script>
-    <script src="https://unpkg.com/htmx.org@1.7.0/dist/htmx.min.js"></script>
 
     {% block extra_js %}
     {% endblock extra_js %}

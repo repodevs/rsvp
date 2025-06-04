@@ -1,9 +1,11 @@
+from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from django.contrib.auth import get_user_model
 
-from app.forms import CustomUserCreationForm
+from app.utils import download_csv, paginate_queryset
+from app.forms import CustomUserCreationForm, UserForm
 
 
 
@@ -21,9 +23,22 @@ def register(request):
 
 
 def users(request):
-    # filter is_staff true or false
-    users = get_user_model().objects.filter(Q(is_staff=True) | Q(is_staff=False)).all()
-    print(users)
+    query = request.GET.get('q')
+    if query:
+        users = get_user_model().objects.filter(
+            Q(username__icontains=query) | 
+            Q(email__icontains=query) | 
+            Q(first_name__icontains=query) | 
+            Q(last_name__icontains=query)
+        ).all()
+    else:
+        users = get_user_model().objects.all()
+    
+    # if not request.user.role == 'admin' filter to only show the current user
+    if not request.user.role == 'ADMIN':
+        users = users.filter(id=request.user.id)
+    
+    users = paginate_queryset(request, users, per_page=10)
     return render(request, 'users.html', {'records': users})
 
 
@@ -31,24 +46,39 @@ def user_detail(request, user_id):
     user = get_user_model().objects.get(id=user_id)
     return render(request, 'user_detail.html', {'user': user})
 
+def user_add(request):
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            record = form.save()
+            messages.success(request, 'Your account has been created successfully!')
+            return render(request, 'partials/users/new_row.html', {'record': record})
+    # else:
+        # form = CustomUserCreationForm()
+    return HttpResponse(form.errors.as_text(), status=422)
+
+
 def user_edit(request, user_id):
     user = get_object_or_404(get_user_model(), id=user_id)
 
     if request.method == 'POST':
-        form = CustomUserCreationForm(request.POST, instance=user)
+        form = UserForm(request.POST, instance=user)
         if form.is_valid():
             form.save()
-            messages.success(request, 'get_user_model() updated successfully!')
+            messages.success(request, 'User updated successfully!')
             return redirect('users')
+        else:
+            messages.error(request, 'Error updating user. Please check the form.')
     else:
-        form = CustomUserCreationForm(instance=user)
-    return render(request, 'user_edit.html', {'form': form})
+        form = UserForm(instance=user)
+    # return render(request, 'user_edit.html', {'form': form})
+    return redirect('user_detail', user_id=user_id)
 
 def user_delete(request, user_id):
     user = get_user_model().objects.get(id=user_id)
     if request.method == 'POST':
         user.delete()
-        messages.success(request, 'get_user_model() deleted successfully!')
+        messages.success(request, 'User deleted successfully!')
         return redirect('users')
     return render(request, 'user_delete.html', {'user': user})
 
@@ -67,3 +97,17 @@ def user_edit_password(request, user_id):
         form = CustomUserCreationForm(instance=user)
     return render(request, 'user_edit_password.html', {'form': form})
 
+def user_download(request):
+    query = request.GET.get('q')
+    if query:
+        users = get_user_model().objects.filter(
+            Q(username__icontains=query) | 
+            Q(email__icontains=query) | 
+            Q(first_name__icontains=query) | 
+            Q(last_name__icontains=query)
+        ).all()
+    else:
+        users = get_user_model().objects.all()
+
+    fields = ['id', 'username', 'email', 'first_name', 'last_name', 'mobile', 'role', 'is_active', 'date_joined']
+    return download_csv(request, users, fields)

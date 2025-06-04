@@ -53,7 +53,9 @@ admin.site.register(Person, PersonAdmin)
 
 
 class RSVPAdmin(ModelAdmin):
-    list_display = ['code', 'name', 'attendance', 'message', 'created_at']
+    list_display = ['name', 'attendance', 'message', 'code', 'is_active', 'created_at']
+    list_filter = ['attendance', 'is_active', 'created_at']
+    search_fields = ['name', 'code']
 
 admin.site.register(RSVP, RSVPAdmin)
 
@@ -79,5 +81,7 @@ admin.site.register(Konfig, KonfigAdmin)
 
 class TrackingAdmin(ModelAdmin):
     list_display = ['ip', 'browser_info', 'code', 'created_at']
+    list_filter = ['is_active', 'created_at']
+    search_fields = ['ip', 'code']
 
 admin.site.register(Tracking, TrackingAdmin)

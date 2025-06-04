@@ -30,6 +30,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = ['https://rsvp.learn.fromindonesia.id', 'http://rsvp.learn.fromindonesia.id', 'http://localhost:8000', 'http://0.0.0.0:8000']
 
 # Application definition
 

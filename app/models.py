@@ -47,7 +47,7 @@ class User(AbstractUser):
     ROLE_CHOICES = [
         ('ADMIN', 'ADMIN'),
         ('STAFF', 'STAFF'),
-        ('GUESTBOOK_ATTENDANT', 'GUESTBOOK ATTENDANT'),
+        ('GUESTBOOK_ATTENDANT', 'BUKU TAMU'),
     ]
     role = models.CharField(max_length=50, choices=ROLE_CHOICES, default='STAFF')
     mobile = models.CharField(max_length=50, blank=True)
@@ -204,6 +204,20 @@ class Tracking(models.Model):
 
     def __str__(self):
         return self.ip
+    
+    @staticmethod
+    def track(request, code=None):
+        """
+        Track the request and save the tracking information.
+        """
+        ip = request.META.get('REMOTE_ADDR')
+        browser_info = request.META.get('HTTP_USER_AGENT', '')
+        tracking = Tracking.objects.create(
+            ip=ip,
+            code=code,
+            browser_info=browser_info
+        )
+        return tracking
 
 
 class Konfig(models.Model):

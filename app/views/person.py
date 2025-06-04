@@ -6,7 +6,7 @@ from django.db.models import Q
 
 from app.models import Person
 from app.forms import PersonForm
-from app.utils import paginate_queryset
+from app.utils import download_csv, paginate_queryset
 
 
 
@@ -32,13 +32,11 @@ def person_add(request):
             person.is_active = True
             person.save()
             messages.success(request, 'Person added successfully!')
-            return render(request, 'partials/persons/new_row.html', {'record': person})
-            # return redirect('persons')
-        print(form.errors)
-        print(request.POST)
+            # return render(request, 'partials/persons/new_row.html', {'record': person})
+            return redirect('persons')
     # else:
         # form = PersonForm()
-    return HttpResponse(status=400)
+    return HttpResponse(form.errors.as_text(), status=422)
 
 def person_edit(request, person_id):
     # Get the person_id and the request authentication user should same
@@ -64,3 +62,15 @@ def person_delete(request, person_id):
         return redirect('persons')
     return render(request, 'person_delete.html', {'person': person})
 
+
+def person_download(request):
+    query = request.GET.get('q')
+    if query:
+        persons = Person.objects.filter(
+            Q(name__icontains=query) | Q(code__icontains=query)
+        ).order_by('-created_at')
+    else:
+        persons = Person.objects.order_by('-created_at').all()
+
+    fields = ['id', 'code', 'name', 'title', 'is_multi_gift', 'is_active', 'created_at']
+    return download_csv(request, persons, fields)

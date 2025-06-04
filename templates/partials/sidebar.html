@@ -17,7 +17,7 @@
           </li> -->
 
           <li>
-            <a href="{% url 'index' %}" class="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700">
+            <a href="{% url 'app_home' %}" class="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700">
                 <svg class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg>
                 <span class="ml-3" sidebar-toggle-item>Dashboard</span>
             </a>
@@ -41,24 +41,24 @@
           </li>
 
           <!-- comments -->
-          <li>
+          <!-- <li>
             <a href="{% url 'comments' %}" class="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700 {% if request.resolver_match.view_name == 'comments' %} bg-gray-100 dark:bg-gray-700 {% endif %}">
               <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path d="M2 2a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V4a2 2 0 00-2-2H2zm0 14V4h16v12H2z"></path>
               </svg>
                 <span class="ml-3" sidebar-toggle-item>Comments</span>
             </a>
-          </li>
+          </li> -->
 
           <!-- gifts -->
-          <li>
+          <!-- <li>
             <a href="{% url 'gifts' %}" class="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700 {% if request.resolver_match.view_name == 'gifts' %} bg-gray-100 dark:bg-gray-700 {% endif %}">
                 <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path d="M10 2a2 2 0 00-2 2v1H6a2 2 0 100 4h1v7a1 1 0 001 1h4a1 1 0 001-1V9h1a2 2 0 100-4h-2V4a2 2 0 00-2-2zm0 2h2v1h-2V4zm-4 3a1 1 0 110-2h2v2H6zm8 0h-2V5h2a1 1 0 110 2z"></path>
                 </svg>
                 <span class="ml-3" sidebar-toggle-item>Gifts</span>
             </a>
-          </li>
+          </li> -->
 
           <!-- tracking -->
           <li>

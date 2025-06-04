@@ -9,6 +9,8 @@ __pycache__/
 node_modules/
 static/CACHE/
 templates/_old/
+static/admin/
+static/unfold/
 
 tmp/
 
