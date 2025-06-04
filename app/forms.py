@@ -41,9 +41,16 @@ class CustomUserCreationForm(AdminUserCreationForm):
         return cleaned_data
 
 class UserForm(forms.ModelForm):
+    password = forms.CharField(
+        label='Password',
+        widget=forms.PasswordInput,
+        required=False,
+        help_text='Leave blank to keep the current password.'
+    )
+
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'mobile', 'role', 'password', 'is_active']
+        fields = ['first_name', 'last_name', 'mobile', 'role', 'is_active']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -55,8 +62,12 @@ class UserForm(forms.ModelForm):
         password = self.cleaned_data.get('password')
         if password:
             user.set_password(password)
+        else:
+            del self.cleaned_data['password']
+
         if commit:
             user.save()
+
         return user
 
 class PersonForm(forms.ModelForm):
