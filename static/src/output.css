@@ -4373,13 +4373,6 @@
       }
     }
   }
-  .dark\:focus\:ring-blue-900 {
-    &:where(.dark, .dark *) {
-      &:focus {
-        --tw-ring-color: var(--color-blue-900);
-      }
-    }
-  }
   .dark\:focus\:ring-gray-600 {
     &:where(.dark, .dark *) {
       &:focus {
