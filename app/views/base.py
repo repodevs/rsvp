@@ -13,11 +13,15 @@ def index(request, code=None):
 def app_home(request):
     total_persons = Person.objects.count()
     total_rsvps = RSVP.objects.count()
+    total_rsvps_yes = RSVP.objects.filter(attendance__icontains='YES').count()
+    total_rsvps_no = RSVP.objects.filter(attendance__icontains='NO').count()
     total_comments = Comment.objects.count()
     total_gifts = Gift.objects.count()
     data = {
         'total_persons': total_persons,
         'total_rsvps': total_rsvps,
+        'total_rsvps_yes': total_rsvps_yes,
+        'total_rsvps_no': total_rsvps_no,
         'total_comments': total_comments,
         'total_gifts': total_gifts
     }

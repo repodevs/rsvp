@@ -8,8 +8,11 @@
      <!-- Main widget -->
      <div class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
 
-      <h3 class="mb-4 text-2xl font-medium text-gray-900 dark:text-white">Hi <span class="text-blue-600 font-bold">There</span></h3>
-      <p class="mb-4 text-gray-500 dark:text-gray-400">Welcome to RSVP Application, your go-to solution for managing event invitations and responses effortlessly. Plan, invite, and track RSVPs with ease!</p>
+      <h3 class="mb-4 text-2xl font-medium text-gray-900 dark:text-white">Hi <span class="text-blue-600 font-bold">{{ request.user.first_name }} {{ request.user.last_name }}</span></h3>
+      <p class="mb-4 text-gray-500 dark:text-gray-400">
+        Selamat datang di Aplikasi RSVP! 🎉
+        <br/>Senang sekali bisa membantu kamu mengatur undangan dan konfirmasi kehadiran acara. Yuk, rencanakan momen spesialmu dengan mudah dan penuh kehangatan bersama kami! 😊✨
+      </p>
      </div>
    </div>
 
@@ -41,13 +44,13 @@
 
          <p class="flex items-center text-base font-normal text-gray-500 dark:text-gray-400">
            <span class="flex items-center mr-1.5 text-sm text-green-500 dark:text-green-400">
-             1 
+             {{ total_rsvps_yes }} 
            </span>
            Hadir
          </p>
          <p class="flex items-center text-base font-normal text-gray-500 dark:text-gray-400">
           <span class="flex items-center mr-1.5 text-sm text-red-500 dark:text-red-400">
-            {{ total_rsvps }} 
+            {{ total_rsvps_no }} 
           </span>
           Tidak Hadir
         </p>
@@ -83,33 +86,33 @@
            View all
          </a>
        </div>
-       <ol class="relative border-l border-gray-200 dark:border-gray-700">                  
-         <li class="mb-10 ml-4">
-             <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-800 dark:bg-gray-700"></div>
-             <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">April 2023</time>
-             <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Application UI design in Figma</h3>
-             <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
-             <a href="#" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-primary-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700">Learn more <svg class="w-3 h-3 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></a>
-         </li>
-         <li class="mb-10 ml-4">
-             <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-800 dark:bg-gray-700"></div>
-             <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">March 2023</time>
-             <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Marketing UI code in Flowbite</h3>
-             <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements built on top of Tailwind CSS.</p>
-             <a href="https://flowbite.com/blocks/" class="inline-flex items-center text-xs font-medium hover:underline text-primary-700 sm:text-sm dark:text-primary-500">
-               Go to Flowbite Blocks
-               <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                 <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-               </svg>
-             </a>
-         </li>
-         <li class="mb-10 ml-4">
-           <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-800 dark:bg-gray-700"></div>
-           <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">February 2023</time>
-           <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Marketing UI design in Figma</h3>
-           <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements built on top of Tailwind CSS.</p>
-         </li>
-       </ol>
+      <ol class="relative border-l border-gray-200 dark:border-gray-700">                  
+        <li class="mb-10 ml-4">
+            <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-800 dark:bg-gray-700"></div>
+            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">April 2023</time>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">RSVP Feature Launched</h3>
+            <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Easily manage event invitations and responses. Track who’s attending and who’s not, all in one place.</p>
+            <a href="#" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-primary-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700">Learn more <svg class="w-3 h-3 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></a>
+        </li>
+        <li class="mb-10 ml-4">
+            <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-800 dark:bg-gray-700"></div>
+            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">March 2023</time>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">RSVP Email Notifications</h3>
+            <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Receive instant email updates when guests respond to your invitations. Stay informed about attendance in real time.</p>
+            <a href="#" class="inline-flex items-center text-xs font-medium hover:underline text-primary-700 sm:text-sm dark:text-primary-500">
+         See notification settings
+         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+           <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+         </svg>
+            </a>
+        </li>
+        <li class="mb-10 ml-4">
+          <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-800 dark:bg-gray-700"></div>
+          <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">February 2023</time>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">RSVP Analytics Added</h3>
+          <p class="text-base font-normal text-gray-500 dark:text-gray-400">View detailed analytics on your event’s RSVP responses, including attendance rates and trends.</p>
+        </li>
+      </ol>
      </div>
 
      <!--Carousel widget -->

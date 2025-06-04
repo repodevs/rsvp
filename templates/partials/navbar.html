@@ -7,7 +7,7 @@
             <svg id="toggleSidebarMobileHamburger" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
             <svg id="toggleSidebarMobileClose" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
           </button>
-          <a href="/" class="flex ml-2 md:mr-24">
+          <a href="{% url 'app_home' %}" class="flex ml-2 md:mr-24">
             <!-- <img src="/images/logo.svg" class="h-8 mr-3" alt="FlowBite Logo" /> -->
             <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">RSVP</span>
           </a>
@@ -45,29 +45,28 @@
               <div>
                 <a href="#" class="flex px-4 py-3 border-b hover:bg-gray-100 dark:hover:bg-gray-600 dark:border-gray-600">
                   <div class="flex-shrink-0">
-                    <img class="rounded-full w-11 h-11" src="{% static 'images/users/leo.png' %}" alt="Leo">
+                    <img class="rounded-full w-11 h-11" src="{% static 'images/users/leo.png' %}" alt="Event Organizer">
                     <div class="absolute flex items-center justify-center w-5 h-5 ml-6 -mt-5 border border-white rounded-full bg-primary-700 dark:border-gray-700">
                       <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z"></path><path d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path></svg>
                     </div>
                   </div>
                   <div class="w-full pl-3">
-                      <div class="text-gray-500 font-normal text-sm mb-1.5 dark:text-gray-400">New message from <span class="font-semibold text-gray-900 dark:text-white">Bonnie Green</span>: "Hey, what's up? All set for the presentation?"</div>
+                      <div class="text-gray-500 font-normal text-sm mb-1.5 dark:text-gray-400">New RSVP invitation from <span class="font-semibold text-gray-900 dark:text-white">Sarah Wilson</span>: "You're invited to our Annual Gala! Please confirm your attendance."</div>
                       <div class="text-xs font-medium text-primary-700 dark:text-primary-400">a few moments ago</div>
                   </div>
                 </a>
                 <a href="#" class="flex px-4 py-3 border-b hover:bg-gray-100 dark:hover:bg-gray-600 dark:border-gray-600">
                   <div class="flex-shrink-0">
-                    <img class="rounded-full w-11 h-11" src="{% static 'images/users/michael.png' %}" alt="Leslie image">
+                    <img class="rounded-full w-11 h-11" src="{% static 'images/users/michael.png' %}" alt="Event Manager">
                     <div class="absolute flex items-center justify-center w-5 h-5 ml-6 -mt-5 bg-green-400 border border-white rounded-full dark:border-gray-700">
                       <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
                     </div>
                   </div>
                   <div class="w-full pl-3">
-                      <div class="text-gray-500 font-normal text-sm mb-1.5 dark:text-gray-400"><span class="font-semibold text-gray-900 dark:text-white">Leslie Livingston</span> mentioned you in a comment: <span class="font-medium text-primary-700 dark:text-primary-500">@bonnie.green</span> what do you say?</div>
+                      <div class="text-gray-500 font-normal text-sm mb-1.5 dark:text-gray-400"><span class="font-semibold text-gray-900 dark:text-white">Michael Chen</span> confirmed attendance for your event: <span class="font-medium text-primary-700 dark:text-primary-500">Wedding Reception</span> - Guest count updated</div>
                       <div class="text-xs font-medium text-primary-700 dark:text-primary-400">1 hour ago</div>
                   </div>
                 </a>
-
               </div>
               <a href="#" class="block py-2 text-base font-normal text-center text-gray-900 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:text-white dark:hover:underline">
                   <div class="inline-flex items-center ">
