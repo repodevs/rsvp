@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
+from django.urls import reverse
 
 from app.models import Person
 from app.forms import PersonForm
@@ -29,7 +30,9 @@ def person_detail(request, person_id):
 def person_qr_code(request, code):
     person = get_object_or_404(Person, code=code)
     # Generate QR code for the person
-    qr_code_url = f"https://api.qrserver.com/v1/create-qr-code/?data={person.code}&size=200x200"
+    url = request.build_absolute_uri(reverse('wedding_home', kwargs={'code': person.code}))
+    data = f'{url}'
+    qr_code_url = f"https://api.qrserver.com/v1/create-qr-code/?data={data}&size=200x200"
     return HttpResponse(f"<img src='{qr_code_url}' alt='QR Code for {person.name}' />")
 
 @login_required
