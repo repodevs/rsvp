@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 
 from app.models import Konfig
@@ -8,6 +9,7 @@ def konfigsx(request):
     konfigs = Konfig.objects.all()
     return render(request, 'konfigs.html', {'records': konfigs})
 
+@login_required
 def konfigs(request):
     if request.method == "POST":
         # Define all expected configuration keys

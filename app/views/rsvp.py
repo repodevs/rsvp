@@ -1,6 +1,7 @@
 import csv
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 
 from app.forms import RSVPForm
@@ -9,6 +10,7 @@ from app.models import RSVP
 
 
 
+@login_required
 def rsvps(request):
     query = request.GET.get('q')
     if query:
@@ -18,6 +20,7 @@ def rsvps(request):
     rsvps = paginate_queryset(request, rsvps, per_page=10)
     return render(request, 'rsvps.html', {'records': rsvps})
 
+@login_required
 def rsvp_edit(request, rsvp_id):
     rsvp = get_object_or_404(RSVP, id=rsvp_id)
     if request.method == 'POST':
@@ -29,7 +32,7 @@ def rsvp_edit(request, rsvp_id):
         form = RSVPForm(instance=rsvp)
     return redirect('rsvps')
 
-
+@login_required
 def rsvp_confirm(request):
     """
     Confirm RSVP with optional code.
@@ -53,7 +56,7 @@ def rsvp_confirm(request):
             return HttpResponse(form.errors.as_text(), status=422)
     return HttpResponse(201)
 
-
+@login_required
 def rsvp_download(request):
     query = request.GET.get('q')
     if query:

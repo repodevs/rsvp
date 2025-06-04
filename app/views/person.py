@@ -10,6 +10,7 @@ from app.utils import download_csv, paginate_queryset
 
 
 
+@login_required
 def persons(request):
     query = request.GET.get('q')
     if query:
@@ -20,10 +21,12 @@ def persons(request):
     persons = paginate_queryset(request, persons, per_page=10)
     return render(request, 'persons.html', {'records': persons})
 
+@login_required
 def person_detail(request, person_id):
     person = Person.objects.get(id=person_id)
     return render(request, 'person_detail.html', {'person': person})
 
+@login_required
 def person_add(request):
     if request.method == 'POST':
         form = PersonForm(request.POST)
@@ -38,6 +41,7 @@ def person_add(request):
         # form = PersonForm()
     return HttpResponse(form.errors.as_text(), status=422)
 
+@login_required
 def person_edit(request, person_id):
     # Get the person_id and the request authentication user should same
     # person = Person.objects.get(id=person_id)
@@ -54,6 +58,7 @@ def person_edit(request, person_id):
     # return render(request, 'person_edit.html', {'form': form})
     return redirect('person_detail', person_id=person_id)
 
+@login_required
 def person_delete(request, person_id):
     person = Person.objects.get(id=person_id)
     if request.method == 'POST':
@@ -62,7 +67,7 @@ def person_delete(request, person_id):
         return redirect('persons')
     return render(request, 'person_delete.html', {'person': person})
 
-
+@login_required
 def person_download(request):
     query = request.GET.get('q')
     if query:

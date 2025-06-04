@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.contrib.auth import get_user_model
 
@@ -22,6 +23,7 @@ def register(request):
     return render(request, 'registration/register.html', {'form': form})
 
 
+@login_required
 def users(request):
     query = request.GET.get('q')
     if query:
@@ -35,17 +37,23 @@ def users(request):
         users = get_user_model().objects.all()
     
     # if not request.user.role == 'admin' filter to only show the current user
-    if not request.user.role == 'ADMIN':
-        users = users.filter(id=request.user.id)
+    if request.user:
+        if not request.user.role == 'ADMIN':
+            users = users.filter(id=request.user.id)
+    else:
+        users = users.exclude(is_superuser=True)
     
     users = paginate_queryset(request, users, per_page=10)
     return render(request, 'users.html', {'records': users})
 
 
+@login_required
 def user_detail(request, user_id):
     user = get_user_model().objects.get(id=user_id)
     return render(request, 'user_detail.html', {'user': user})
 
+
+@login_required
 def user_add(request):
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
@@ -58,6 +66,7 @@ def user_add(request):
     return HttpResponse(form.errors.as_text(), status=422)
 
 
+@login_required
 def user_edit(request, user_id):
     user = get_object_or_404(get_user_model(), id=user_id)
 
@@ -74,6 +83,7 @@ def user_edit(request, user_id):
     # return render(request, 'user_edit.html', {'form': form})
     return redirect('user_detail', user_id=user_id)
 
+@login_required
 def user_delete(request, user_id):
     user = get_user_model().objects.get(id=user_id)
     if request.method == 'POST':
@@ -82,6 +92,7 @@ def user_delete(request, user_id):
         return redirect('users')
     return render(request, 'user_delete.html', {'user': user})
 
+@login_required
 def user_edit_password(request, user_id):
     user = get_object_or_404(get_user_model(), id=user_id)
 
@@ -97,6 +108,7 @@ def user_edit_password(request, user_id):
         form = CustomUserCreationForm(instance=user)
     return render(request, 'user_edit_password.html', {'form': form})
 
+@login_required
 def user_download(request):
     query = request.GET.get('q')
     if query:
