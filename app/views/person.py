@@ -26,6 +26,12 @@ def person_detail(request, person_id):
     person = Person.objects.get(id=person_id)
     return render(request, 'person_detail.html', {'person': person})
 
+def person_qr_code(request, code):
+    person = get_object_or_404(Person, code=code)
+    # Generate QR code for the person
+    qr_code_url = f"https://api.qrserver.com/v1/create-qr-code/?data={person.code}&size=200x200"
+    return HttpResponse(f"<img src='{qr_code_url}' alt='QR Code for {person.name}' />")
+
 @login_required
 def person_add(request):
     if request.method == 'POST':

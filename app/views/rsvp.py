@@ -6,7 +6,7 @@ from django.db.models import Q
 
 from app.forms import RSVPForm
 from app.utils import paginate_queryset, download_csv
-from app.models import RSVP
+from app.models import RSVP, Person
 
 
 
@@ -55,6 +55,33 @@ def rsvp_confirm(request):
         else:
             return HttpResponse(form.errors.as_text(), status=422)
     return HttpResponse(201)
+
+def rsvp_attendance_code(request, code):
+    """get or create RSVP by code with attendance is YES"""
+    if not code:
+        return redirect('index')
+
+    person = Person.objects.filter(code=code).first()
+    if not person:
+        return redirect('index')
+
+    existing_rsvp = RSVP.objects.filter(code=code).first()
+    if existing_rsvp:
+        # If RSVP already exists, update attendance to YES
+        existing_rsvp.attendance = 'YES'
+        existing_rsvp.is_active = True
+        existing_rsvp.save()
+        return redirect('wedding_home', code=code)
+
+    rsvp = RSVP.objects.create(
+        code=code,
+        name=person.name,
+        message='Confirmed attendance using qr code',
+        attendance='YES',
+        is_active=True
+    )
+
+    return redirect('wedding_home', code=code)
 
 @login_required
 def rsvp_download(request):

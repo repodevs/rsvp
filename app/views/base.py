@@ -61,7 +61,7 @@ def wedding_home(request, code=None):
                 person = None
 
     # Get recent RSVPs for display
-    rsvps = RSVP.objects.filter(is_active=True).order_by('-created_at')[:10]
+    rsvps = RSVP.objects.filter(is_active=True).order_by('-created_at')
     current_rsvp = RSVP.objects.filter(code=code).first()
  
     # Add timeago and comments for each RSVP

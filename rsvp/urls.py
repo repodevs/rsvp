@@ -33,7 +33,8 @@ urlpatterns = [
 
     path('', views.index, name='index'),
     path('<str:code>/', views.wedding_home, name='wedding_home'),
-    path('<str:code>', views.wedding_home, name='wedding_home'),
+    path('<str:code>/qr/', views.person.person_qr_code, name='person_qr_code'),
+    path('<str:code>/confirm/', views.rsvp.rsvp_attendance_code, name='rsvp_attendance_code'),
 ]
 
 

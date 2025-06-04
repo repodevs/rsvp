@@ -28,6 +28,8 @@ SECRET_KEY = 'django-insecure-o*+hq=q9h0llzsw96(=*2*0kv9kz0g49o6bl9(40dk3uzza^4p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+APPEND_SLASH = True
+
 ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = ['https://rsvp.learn.fromindonesia.id', 'http://rsvp.learn.fromindonesia.id', 'http://localhost:8000', 'http://0.0.0.0:8000']
