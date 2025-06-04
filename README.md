@@ -221,6 +221,10 @@ npx @tailwindcss/cli -i ./static/src/input.css -o ./static/src/output.css --watc
 
 ![Konfig](./static/screenshots/08_config.jpeg)
 
+## Invitation Page Result
+
+![Invitation Page](./static/screenshots/09_invitation.jpeg)
+
 ## License 📜
 
 This project is licensed under the MIT License. 🏛️
