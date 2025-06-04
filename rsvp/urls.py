@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.shortcuts import redirect
 
 from app import views
 
@@ -32,4 +33,14 @@ urlpatterns = [
 
     path('', views.index, name='index'),
     path('<str:code>/', views.wedding_home, name='wedding_home'),
+    path('<str:code>', views.wedding_home, name='wedding_home'),
 ]
+
+
+def custom_404(request, exception):
+    """
+    Custom 404 error handler.
+    """
+    return redirect('index')
+
+handler404 = custom_404
