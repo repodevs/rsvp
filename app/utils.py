@@ -37,6 +37,13 @@ def api_validator(view_func):
     def _wrapped_view(request, *args, **kwargs):
         x_api_key = request.headers.get('X-API-KEY')
         configured_api = config('X_API_KEY', default='rsvpsibermu')
+        if_request_options = request.method == 'OPTIONS'
+        if if_request_options:
+            return HttpResponse(
+                json.dumps({'message': 'OK'}),
+                content_type='application/json',
+                status=200
+            )
         if not x_api_key or x_api_key != configured_api:
             return HttpResponse(
                 json.dumps({'error': 'Unauthorized access'}),
