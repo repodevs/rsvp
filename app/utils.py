@@ -1,7 +1,10 @@
 import csv
+import json
+from decouple import config
 from datetime import datetime
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse
+from functools import wraps
 
 
 def paginate_queryset(request, queryset, per_page=10):
@@ -24,6 +27,24 @@ def is_user_or_staff(request, user):
     Check if the request user is the same as the user or if the request user is a staff member.
     """
     return request.user == user or request.user.is_staff
+
+
+def api_validator(view_func):
+    """
+    Decorator to validate if the request has header 'X-API-KEY', otherwise return 401 JSON response.
+    """
+    @wraps(view_func)
+    def _wrapped_view(request, *args, **kwargs):
+        x_api_key = request.headers.get('X-API-KEY')
+        configured_api = config('X_API_KEY', default='rsvpsibermu')
+        if not x_api_key or x_api_key != configured_api:
+            return HttpResponse(
+                json.dumps({'error': 'Unauthorized access'}),
+                content_type='application/json',
+                status=401
+            )
+        return view_func(request, *args, **kwargs)
+    return _wrapped_view
 
 
 def download_csv(request, objects, fields):

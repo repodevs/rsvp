@@ -1,11 +1,13 @@
 import csv
+import json
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
 from django.db.models import Q
 
 from app.forms import RSVPForm
-from app.utils import paginate_queryset, download_csv
+from app.utils import api_validator, paginate_queryset, download_csv
 from app.models import RSVP, Person
 
 
@@ -98,3 +100,67 @@ def rsvp_download(request):
     fields = ['id', 'code', 'name', 'message', 'attendance', 'is_active', 'created_at']
     
     return download_csv(request, rsvps, fields)
+
+@api_validator
+def api_rsvp_list(request):
+    """
+    API endpoint to list RSVPs.
+    Returns a JSON response with all RSVPs.
+    """
+    rsvps = RSVP.objects.all().order_by('-created_at')
+    datas = []
+    for data in rsvps:
+        datas.append({
+            'id': data.id,
+            'code': data.code,
+            'name': data.name,
+            'message': data.message,
+            'attendance': data.attendance,
+            'created_at': data.created_at.isoformat()
+        })
+    return HttpResponse(json.dumps(datas), content_type='application/json')
+
+@csrf_exempt
+@api_validator
+def api_rsvp_confirm(request, code):
+    """
+    API endpoint to confirm RSVP.
+    Expects a POST request with 'code' in the body.
+    Returns a JSON response with the updated RSVP.
+    """
+    if request.method == 'POST':
+        if not code:
+            return HttpResponse(json.dumps({'error': 'Code is required'}), status=400, content_type='application/json')
+        
+        person = Person.objects.filter(code=code).first()
+        if not person:
+            return HttpResponse(json.dumps({'error': 'Person not found'}), status=404, content_type='application/json')
+        
+        existing_rsvp = RSVP.objects.filter(code=code).first()
+        if existing_rsvp:
+            # If RSVP already exists, update attendance to YES
+            existing_rsvp.attendance = 'YES'
+            existing_rsvp.is_active = True
+            existing_rsvp.save()
+            rsvp = existing_rsvp
+        else:
+            # Create a new RSVP
+            rsvp = RSVP.objects.create(
+                code=code,
+                name=person.name,
+                message='Confirmed attendance using APP',
+                attendance='YES',
+                is_active=True
+            )
+
+        response_data = {
+            'id': rsvp.id,
+            'code': rsvp.code,
+            'name': rsvp.name,
+            'message': rsvp.message,
+            'attendance': rsvp.attendance,
+            'created_at': rsvp.created_at.isoformat()
+        }
+        return HttpResponse(json.dumps(response_data), content_type='application/json')
+    
+    return HttpResponse(status=405)  # Method Not Allowed
