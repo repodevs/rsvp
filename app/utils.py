@@ -39,11 +39,19 @@ def api_validator(view_func):
         configured_api = config('X_API_KEY', default='rsvpsibermu')
         if_request_options = request.method == 'OPTIONS'
         if if_request_options:
-            return HttpResponse(
+            # send Access-Control-Max-Age: 86400 so that the browser caches the preflight response for 24 hours
+            response = HttpResponse(
                 json.dumps({'message': 'OK'}),
                 content_type='application/json',
                 status=200
             )
+            response['Access-Control-Allow-Origin'] = '*'
+            response['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE, OPTIONS'
+            response['Access-Control-Allow-Headers'] = 'X-API-KEY, Content-Type'
+            response['Access-Control-Max-Age'] = '86400'  # Cache preflight response for 24 hours
+            response['Access-Control-Allow-Credentials'] = 'true'
+            return response
+
         if not x_api_key or x_api_key != configured_api:
             return HttpResponse(
                 json.dumps({'error': 'Unauthorized access'}),
